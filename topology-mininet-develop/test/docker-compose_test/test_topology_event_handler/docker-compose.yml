@@ -1,0 +1,68 @@
+version: "3"
+services:
+  controller:
+    build: ../../../../controller_develop
+    command: ryu run --observe-links ryu.app.shortest_path
+    volumes:
+      - ./:/scripts
+    cap_add:
+      - NET_ADMIN
+    networks:
+      ctrl_net:
+        ipv4_address: 172.21.238.6
+
+
+  pkt_generator:
+    build: ../../../../pkt_generator_develop
+    command: tail -F anything
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - controller
+    volumes:
+      - ./:/scripts
+    networks:
+      of_net:
+        ipv4_address: 172.20.238.4
+
+
+  switch:
+    #    build: ../../../../switch_develop
+    image: socketplane/openvswitch
+    volumes:
+      - ../../../../switch_develop:/home/ovs
+    cap_add:
+      - NET_ADMIN
+    command: /usr/bin/supervisord -c /home/ovs/supervisord.conf
+    networks:
+      ctrl_net:
+        ipv4_address: 172.21.238.2
+      of_net:
+        ipv4_address: 172.20.238.9
+
+  switch2:
+    #    build: ../../../../switch_develop
+    image: socketplane/openvswitch
+    volumes:
+      - ../../../../switch_develop:/home/ovs
+    command: /usr/bin/supervisord -c /home/ovs/supervisord.conf
+    cap_add:
+      - NET_ADMIN
+    networks:
+      ctrl_net:
+        ipv4_address: 172.21.238.3
+      of_net:
+        ipv4_address: 172.20.238.10
+
+
+networks:
+  of_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.238.0/24"
+  ctrl_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.21.238.0/24"

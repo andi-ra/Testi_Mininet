@@ -1,0 +1,68 @@
+version: "3"
+services:
+  controller:
+    #    build: ../../../../controller_develop
+    build: /home/ubuntu/PycharmProjects/Testi_Mininet/controller_develop
+    command: ryu run --observe-links ryu.app.simple_switch_Dulla
+    volumes:
+      - ./:/scripts
+    cap_add:
+      - NET_ADMIN
+    networks:
+      ctrl_net:
+        ipv4_address: 172.21.238.6
+
+
+  pkt_generator:
+    #    build: ../../../../pkt_generator_develop
+    build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
+    command: tail -F anything
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - controller
+    volumes:
+      - ./:/scripts
+    networks:
+      of_net:
+        ipv4_address: 172.20.238.4
+
+  pkt_generator2:
+    #    build: ../../../../pkt_generator_develop
+    build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
+    command: tail -F anything
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - controller
+    volumes:
+      - ./:/scripts
+    networks:
+      of_net:
+        ipv4_address: 172.20.238.7
+
+  switch:
+    image: socketplane/openvswitch
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /home/ubuntu/PycharmProjects/Testi_Mininet/switch_develop:/home/ovs
+    command: /usr/bin/supervisord -c /home/ovs/supervisord.conf
+    networks:
+      ctrl_net:
+        ipv4_address: 172.21.238.2
+      of_net:
+        ipv4_address: 172.20.238.9
+
+
+networks:
+  of_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.238.0/24"
+  ctrl_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.21.238.0/24"
