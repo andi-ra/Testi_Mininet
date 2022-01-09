@@ -27,3 +27,31 @@ ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exi
 ovs-vsctl: 'list' command requires at least 1 arguments
 ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
 ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: no bridge named eth1
+ovs-vsctl: no bridge named br0
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: no row "br0" in table Interface
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: no bridge named br0
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: no bridge named br0
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: no row "br0" in table Interface
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: no bridge named br0
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: 'list' command requires at least 1 arguments

@@ -50,8 +50,8 @@ class SimpleSwitch(app_manager.RyuApp):
 
     def create_packet_from_raw_bytes(self, raw_bytes_pkt):
         pkt = scapy.layers.l2.Ether(bytes(raw_bytes_pkt))
-        self.logger.info("Racket rececived: \n")
-        self.logger.info(pkt.__str__)
+        # self.logger.info("Racket rececived: \n")
+        # self.logger.info(pkt.__str__)
         return pkt
 
     def add_flow(self, datapath, in_port, dst, src, actions):
@@ -98,10 +98,11 @@ class SimpleSwitch(app_manager.RyuApp):
         # learn a mac address to avoid FLOOD next time.
         self.mac_to_port[dpid][src] = msg.in_port
 
-        if dst in self.mac_to_port[dpid]:
-            out_port = self.mac_to_port[dpid][dst]
-        else:
-            out_port = ofproto.OFPP_FLOOD
+        # if dst in self.mac_to_port[dpid]:
+        #     out_port = self.mac_to_port[dpid][dst]
+        # else:
+        #     out_port = ofproto.OFPP_FLOOD
+        out_port = ofproto.OFPP_FLOOD
 
         actions = [datapath.ofproto_parser.OFPActionOutput(out_port)]
 

@@ -180,3 +180,73 @@ OFPST_PORT reply (xid=0x2): 2 ports
         Port "eth1"
             Interface "eth1"
 is_connected        : true
+791b0fc6-83cd-4b9e-853e-8936f01eb4a0
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=48, bytes=6608, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+2548568d-611f-4c0b-820b-9d29665c7460
+    Manager "ptcp:6640"
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+    ovs_version: "2.4.0"
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=31, bytes=4304, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+7722f6c7-a0e3-4034-a7a8-bfa8500c39ee
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=32, bytes=4223, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+121a0e9a-8953-4709-97ed-e14d71e910f5
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : true
+c9b7c1fb-c384-49a3-929f-fd86919d5855
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=47, bytes=6522, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+5ec0eb78-fcc3-4087-a31d-e2b6c1685535
+    Manager "ptcp:6640"
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+    ovs_version: "2.4.0"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=22, bytes=2565, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+6e30de10-7800-4c3f-9c5b-f3ead459eefb
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : true

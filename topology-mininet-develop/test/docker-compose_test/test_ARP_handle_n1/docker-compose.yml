@@ -21,13 +21,11 @@ services:
       - NET_ADMIN
     depends_on:
       - controller
-    volumes:
-      - ./:/scripts
     networks:
       of_net:
         ipv4_address: 172.20.238.4
 
-  pkt_generator2:
+  pkt_sniffer:
     #    build: ../../../../pkt_generator_develop
     build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
     command: tail -F anything
@@ -35,13 +33,12 @@ services:
       - NET_ADMIN
     depends_on:
       - controller
-    volumes:
-      - ./:/scripts
     networks:
-      of_net:
-        ipv4_address: 172.20.238.7
+      mirror_net:
+        ipv4_address: 172.89.238.7
 
   switch:
+#    build: /home/ubuntu/PycharmProjects/Testi_Mininet/switch_develop/Dockerfile
     image: socketplane/openvswitch
     cap_add:
       - NET_ADMIN
@@ -53,6 +50,8 @@ services:
         ipv4_address: 172.21.238.2
       of_net:
         ipv4_address: 172.20.238.9
+      mirror_net:
+        ipv4_address: 172.89.238.9
 
 
 networks:
@@ -66,3 +65,8 @@ networks:
       driver: default
       config:
         - subnet: "172.21.238.0/24"
+  mirror_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.89.238.0/24"

@@ -1,8 +1,6 @@
 FROM travelping/scapy
-RUN python3 -m pip install IPy
+RUN apk add iptables nano git
+RUN git clone https://github.com/kytos/python-openflow.git
+RUN cd python-openflow && python3 setup.py install
 ADD pkt_generator.py /pkt_generator.py
-ADD LLDP_TLV.py /LLDP_TLV.py
-ADD NotificationBox.py /NotificationBox.py
-ADD Packet_Generator.py /Packet_Generator.py
-ADD tool.py /tool.py
 ADD openflow.pcapng /openflow.pcapng

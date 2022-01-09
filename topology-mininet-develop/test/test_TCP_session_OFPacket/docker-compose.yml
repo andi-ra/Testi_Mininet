@@ -1,0 +1,31 @@
+version: "3"
+services:
+  controller:
+    build: /home/ubuntu/PycharmProjects/Testi_Mininet/controller_develop
+    command: ryu run --observe-links ryu.app.simple_switch_Dulla
+    cap_add:
+      - NET_ADMIN
+    networks:
+      ctrl_net:
+        ipv4_address: 192.168.238.9
+
+
+  pkt_generator_OFPKT:
+    #    build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
+    image: scapy_generator_tcp_test
+    command: tail -F anything
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - controller
+    networks:
+      ctrl_net:
+        ipv4_address: 192.168.238.4
+
+
+networks:
+  ctrl_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.238.0/24"
