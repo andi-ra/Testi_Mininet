@@ -10,9 +10,9 @@ services:
         ipv4_address: 192.168.238.9
 
 
-  pkt_generator_OFPKT:
-    #    build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
-    image: scapy_generator_tcp_test
+  pkt_generator_opfpkt:
+    build: /home/ubuntu/PycharmProjects/Testi_Mininet/pkt_generator_develop
+#    image: scapy_generator_tcp_test
     command: tail -F anything
     cap_add:
       - NET_ADMIN

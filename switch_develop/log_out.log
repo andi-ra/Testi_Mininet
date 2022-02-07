@@ -250,3 +250,248 @@ OFPST_PORT reply (xid=0x2): 2 ports
         Port "eth1"
             Interface "eth1"
 is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=23, bytes=2885, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+f66ab38e-ac57-4eb5-bab9-8feb2c83a499
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=26, bytes=3418, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+df7f2ec5-16d6-44f2-8040-6ea3a88f67b2
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : true
+cde5281d-fd71-49a6-b53c-e4551df4529e
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=33, bytes=4406, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+165951da-d99b-4230-9339-9443e4c534dc
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=34, bytes=4646, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+f7f6e1e5-00b0-4609-b571-c9adaeb08477
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=33, bytes=4527, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+9e4319ec-b7ac-4d87-a957-7b0eb70c1270
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=21, bytes=2708, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+5a2179f3-b8fb-49d6-90a6-739f84b2e3c0
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=35, bytes=4762, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+9653b882-52f9-475e-b18b-b467000f1f64
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=30, bytes=3884, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+9d3c5dc8-06cb-49b8-a399-83e6853fce59
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=29, bytes=3712, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+d21f1ce0-4804-47fe-8eba-d4e8517ae40f
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=29, bytes=3850, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+e9c3f3c9-2c49-48a3-aefe-acbba3df8766
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=32, bytes=4428, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+a720ee0c-809a-489d-a3eb-a80bf4425a8f
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=29, bytes=3918, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+d1dbe8f8-d8b8-4459-8914-2b1b89def97f
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=33, bytes=4538, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+9e1eb0dd-0218-4b21-8281-90b4b29f675e
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : true
+is_connected        : true
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=8, bytes=772, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+d5ead5ba-6ad4-4170-8122-5f84b4fa7ebb
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=7, bytes=662, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+011c8748-edeb-4ebd-97e5-4d676714f256
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : false
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=27, bytes=3575, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+f6303b9e-204e-4092-b62f-d6ccf6ad09c1
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=30, bytes=4097, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+2b58d638-1adf-4b6c-968c-0c4112f76911
+    Bridge "br0"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+is_connected        : false
+is_connected        : false
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=18, bytes=2417, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+6bee526a-03d4-40e1-af54-277775cadaa1
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=18, bytes=2417, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+c93b7520-7ead-42b8-bbe9-77f678383940
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+is_connected        : false
+is_connected        : false

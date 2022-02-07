@@ -1,9 +1,10 @@
 """Questo è il file che mi serve per testare in TCP la riuscita della connessione """
+import dataclasses
 import socket
 from time import sleep
 
 from pyof.foundation.basic_types import UBInt32, UBInt16, UBInt8, UBInt64, DPID
-from pyof.utils import unpack
+from pyof.utils import unpack, validate_packet
 from pyof.v0x01.asynchronous.packet_in import PacketIn
 from pyof.v0x01.common.action import ActionType
 from pyof.v0x01.common.header import Header
@@ -18,6 +19,64 @@ from scapy.layers.l2 import Ether, ARP
 from scapy.packet import Raw, Padding
 from scapy.sendrecv import sr1
 from scapy.utils import rdpcap
+
+@dataclasses.dataclass
+class TLV:
+    """
+    Formato generico di rappresentazione dei parametri di rete, tutti sono in questo modo
+    """
+    type: int
+    length: int
+    value: bytes
+    subtype: int = None
+
+
+class LLDP(object):
+    """
+    Questa classe rappresenta il pacchetto LLDP come da `RFC 4957 <https://datatracker.ietf.org/doc/html/rfc4957>`_. Una
+    delle "references" lì punta allo standard `IEEE-802.1ab <https://standards.ieee.org/standard/802_1AB-2016.html>`_.
+    Troviamo in quello standard la descrizione del LLDPDU per la segnalazione dei dispositivi sulla rete.
+
+    =========  ========  ========
+    Chassis    Port      TTL
+    =========  ========  ========
+    Type       Type      Type
+    Subtype    Subtype   Subtype
+    Length     Length    Length
+    Value      Value     Value
+    =========  ========  ========
+
+    """
+
+    def __init__(self, raw_str):
+        self._raw = bytes(raw_str)
+
+    @property
+    def chassis(self):
+        return TLV(
+            type=int(bytes.hex(self._raw[0:1]), 16) >> 1,
+            length=int(bytes.hex(self._raw[1:2]), 16),
+            subtype=int(bytes.hex(self._raw[2:3]), 16),
+            value=self._raw[3:24],
+        )
+
+    @property
+    def port(self):
+        return TLV(
+            type=int(bytes.hex(self._raw[24:25]), 16) >> 1,
+            length=int(bytes.hex(self._raw[25:26]), 16),
+            subtype=int(bytes.hex(self._raw[26:27]), 16),
+            value=self._raw[27:31]
+        )
+
+    @property
+    def TTL(self):
+        return TLV(
+            type=bytes.hex(self._raw[31:32]),
+            length=bytes.hex(self._raw[32:33]),
+            value=bytes.hex(self._raw[33:35]),
+        )
+
 
 TIMEOUT = 2
 conf.verb = 0
@@ -69,7 +128,7 @@ if __name__ == '__main__':
         sock.sendall(packet.pack())
         data = sock.recv(4096)
         packet_out = FlowMod(unpack(data))
-        print(packet_out.actions)
+        # print(packet_out.actions)
         chassis = bytearray(7)
         chassis[0:3] = (0x02, 0x06, 0x07)
         chassis[3:] = str.encode('fakey', 'utf-8')
@@ -92,6 +151,13 @@ if __name__ == '__main__':
         sock.sendall(packet.pack())
         data = sock.recv(4096)
         print(unpack(data))
+        scapy_lldp = Ether(data)
+        scapy_lldp.show()
+        lldp_packet = LLDP(scapy_lldp.payload)
+        print(lldp_packet.chassis)
+        print(lldp_packet.TTL)
+
+
 
     finally:
         print('closing socket')

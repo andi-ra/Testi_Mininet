@@ -3,7 +3,7 @@ services:
   controller:
     #    build: ../../../../controller_develop
     build: /home/ubuntu/PycharmProjects/Testi_Mininet/controller_develop
-    command: ryu run --observe-links ryu.app.simple_switch_Dulla
+    command: ryu run --observe-links ryu.app.rest_configuration_switch
     volumes:
       - ./:/scripts
     cap_add:

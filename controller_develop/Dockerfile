@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #RUN python -m pip install --upgrade pip
 ADD simple_switch_Dulla.py /usr/local/lib/python3.8/site-packages/ryu/app/simple_switch_Dulla.py
 ADD shortest_path.py /usr/local/lib/python3.8/site-packages/ryu/app/shortest_path.py
+ADD rest_configuration_switch.py /usr/local/lib/python3.8/site-packages/ryu/app/rest_configuration_switch.py
 RUN python3 -m pip install nose eventlet==0.31.1 scapy networkx importlib-metadata
 RUN apt-get update && apt-get -o Dpkg::Options::="--force-confmiss" install -y --reinstall netbase
 
