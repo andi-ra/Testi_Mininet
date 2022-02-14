@@ -103,3 +103,31 @@ ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exi
 ovs-vsctl: 'list' command requires at least 1 arguments
 ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
 ovs-vsctl: 'list' command requires at least 1 arguments
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: cannot create a port named eth1 because a port named eth1 already exists on bridge br0
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-ofctl: br0 is not a bridge or a socket
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+ovs-vsctl: no bridge named br0
+ovs-vsctl: no row "br0" in table Interface
+ovs-vsctl: no bridge named br0
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists
+ovs-vsctl: cannot create a port named br0 because a bridge named br0 already exists

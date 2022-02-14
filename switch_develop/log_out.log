@@ -495,3 +495,111 @@ c93b7520-7ead-42b8-bbe9-77f678383940
             Interface "eth1"
 is_connected        : false
 is_connected        : false
+5e628803-0710-4961-bf6f-3bab0aab3d90
+    Manager "ptcp:6640"
+    Bridge "br0"
+        Controller "tcp:172.21.156.60:6633"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+    ovs_version: "2.4.0"
+131d610a-6818-42be-9729-d7b1fddfc1fb
+    Manager "ptcp:6640"
+    Bridge "br0"
+        Controller "tcp:172.21.156.60:6633"
+        Port "eth1"
+            Interface "eth1"
+        Port "br0"
+            Interface "br0"
+                type: internal
+    ovs_version: "2.4.0"
+_uuid               : cadf0aa4-0079-4eba-b3df-8be3dc1e7273
+connection_mode     : []
+controller_burst_limit: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : []
+other_config        : {}
+role                : other
+status              : {sec_since_connect="10", state=ACTIVE}
+target              : "tcp:172.21.156.60:6633"
+_uuid               : 64063f21-dfbf-48c1-9c1e-c89fe32e072a
+connection_mode     : []
+controller_burst_limit: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : []
+other_config        : {}
+role                : other
+status              : {sec_since_connect="10", state=ACTIVE}
+target              : "tcp:172.21.156.60:6633"
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=22, bytes=2708, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+OFPST_PORT reply (xid=0x2): 2 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=17, bytes=2135, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+ef76adea-5b82-48b8-966f-e8d0a094b993
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+28252a20-eb2a-43a1-b1a4-1e3870a03fb3
+    Bridge "br0"
+        Port "br0"
+            Interface "br0"
+                type: internal
+        Port "eth1"
+            Interface "eth1"
+_uuid               : be4b81e8-5908-4e9f-9950-9a5abbf6fa3e
+connection_mode     : []
+controller_burst_limit: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : []
+other_config        : {}
+role                : other
+status              : {sec_since_connect="10", state=ACTIVE}
+target              : "tcp:172.21.156.60:6633"
+_uuid               : dc009d74-11ee-44bf-b5f2-34cc8d29a254
+connection_mode     : []
+controller_burst_limit: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : []
+other_config        : {}
+role                : other
+status              : {sec_since_connect="10", state=ACTIVE}
+target              : "tcp:172.21.156.60:6633"

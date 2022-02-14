@@ -1,9 +1,24 @@
 version: "3"
 services:
+
+  compose_pkt_generator_monitor:
+    build: ../pkt_generator_develop
+#    image: scapy_generator
+    command: python3 pkt_generator.py -s
+#    command: tail -F anything
+    mac_address: 08:00:00:00:00:02
+    cap_add:
+      - NET_ADMIN
+    networks:
+      pkt_net:
+        ipv4_address: 192.168.238.4
+
   compose_pkt_generator_producer:
     #lui ha l'interprete
     build: ../pkt_generator_develop
+#    image: scapy_generator
     command: tail -F anything
+    mac_address: 08:00:00:00:00:01
     cap_add:
       - NET_ADMIN
     depends_on:
@@ -11,15 +26,6 @@ services:
     networks:
       pkt_net:
         ipv4_address: 192.168.238.5
-
-  compose_pkt_generator_monitor:
-    build: ../pkt_generator_develop
-    command: python3 pkt_generator.py -m
-    cap_add:
-      - NET_ADMIN
-    networks:
-      pkt_net:
-        ipv4_address: 192.168.238.4
 
 networks:
   pkt_net:
