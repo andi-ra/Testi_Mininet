@@ -109,19 +109,20 @@ if __name__ == '__main__':
 
     if args.client:
         pkt_list = []
-        packet = Ether(dst="08:00:00:00:00:01") / \
+        packet = Ether(dst="08:00:00:00:00:02") / \
                  IP(dst=str(args.client)) / TCP(sport=random.randint(2000, 65535), dport=5202) / Raw("CIAO")
         pill = IP(dst=str(args.client)) / TCP(sport=random.randint(2000, 65535), dport=5201, flags="F") / Raw(" Poison")
         i = 0
         while i < MAX_PACKET:
-            packet[TCP].sport = random.randint(1024, 65535)
+            packet = Ether(dst="08:00:00:00:00:02") / \
+                     IP(dst=str(args.client)) / TCP(sport=random.randint(2000, 65535), dport=5202) / Raw("CIAO")
             i = i + 1  # Da rifare meglio...
             pkt_list.append(packet)
         i = 0
         print("Sending fast")
-        print(sendpfast(pkt_list, loop=1e5, parse_results=1, iface="eth0", replay_args=["topspeed"]))
+        print(sendpfast(pkt_list, mbps=500, loop=1e2, parse_results=1, iface="eth0", replay_args=["K"], ))
         while i < 10:  # 10 pacchetti garantiscono che i monitor finiscono
-            pill[TCP].sport = random.randint(1024, 65535)
+            pill = IP(dst=str(args.client)) / TCP(sport=random.randint(2000, 65535), dport=5201, flags="F") / Raw(" Poison")
             i = i + 1  # Da rifare meglio...
             send(pill)
         sleep(1)  # Messo per i test...
