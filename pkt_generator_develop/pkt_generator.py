@@ -118,12 +118,7 @@ if __name__ == '__main__':
             i = i + 1  # Da rifare meglio...
             pkt_list.append(packet)
         i = 0
-        # with open("pkts.pcap") as pcap:
         print("Sending fast")
-        # cmd = shlex.split("tcpreplay -i eth0 --mbps 100 1.pcap")
-        # p = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-        # out, err = p.communicate()
-        # print(out)
         print(sendpfast(pkt_list, loop=1e5, parse_results=1, iface="eth0", replay_args=["topspeed"]))
         while i < 10:  # 10 pacchetti garantiscono che i monitor finiscono
             pill[TCP].sport = random.randint(1024, 65535)
