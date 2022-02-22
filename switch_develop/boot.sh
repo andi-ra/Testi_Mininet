@@ -15,9 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-if [ ! -f "/etc/openvswitch/conf.db" ]
-then
+if [ ! -f "/etc/openvswitch/conf.db" ]; then
   ovsdb-tool create /etc/openvswitch/conf.db /usr/share/openvswitch/vswitch.ovsschema
 
   ovsdb-server --detach --remote=punix:/var/run/openvswitch/db.sock
@@ -28,30 +26,24 @@ then
   until [ $x = "1" ]; do
     ovs-vsctl add-br br$x
     ovs-vsctl set bridge br$x datapath_type=netdev
-    x=$((x+1))
+    x=$((x + 1))
   done
 
-  if [ $MANAGEMENT_INTERFACE == 1 ]
-  then
-    x=1
-  else
-    x=0
-  fi
-
-  until [ $x = "3" ]; do
+  x=1
+  until [ $x = "16" ]; do
     ovs-vsctl add-port br0 eth$x
-    x=$((x+1))
+    x=$((x + 1))
   done
 else
   ovsdb-server --detach --remote=punix:/var/run/openvswitch/db.sock
   ovs-vswitchd --detach
 fi
 
-
 x=0
 until [ $x = "1" ]; do
   ip link set dev br$x up
-  x=$((x+1))
+  x=$((x + 1))
 done
-
+ovs-ofctl -O OpenFlow13 del-flows br0
+/usr/sbin/sshd
 /bin/sh

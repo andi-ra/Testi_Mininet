@@ -16,12 +16,17 @@
 """
 An OpenFlow 1.0 L2 learning switch implementation.
 """
+from time import sleep
+
 import networkx as nx
 import scapy.layers.l2
+from ryu.app import wsgi
 from ryu.base import app_manager
+from ryu.base.app_manager import AppManager
 from ryu.controller import ofp_event
 from ryu.controller.handler import MAIN_DISPATCHER
 from ryu.controller.handler import set_ev_cls
+from ryu.lib import hub
 from ryu.ofproto import ofproto_v1_0
 from ryu.lib.mac import haddr_to_bin
 from ryu.lib.packet import packet
@@ -29,7 +34,7 @@ from ryu.lib.packet import ethernet
 from ryu.lib.packet import ether_types
 from ryu.topology import event, switches
 from ryu.topology.api import get_switch, get_link
-from scapy.packet import Packet
+from ryu import log
 
 
 class SimpleSwitch(app_manager.RyuApp):
@@ -157,3 +162,25 @@ class SimpleSwitch(app_manager.RyuApp):
         self.net.add_edges_from(links)
         self.logger.info("**********List of links\n\n")
         self.logger.info(self.net.edges())
+
+
+if __name__ == '__main__':
+    print("Eseguo l'app di config switch")
+    app_lists = ['ryu.app.simple_switch_Dulla']
+    log.init_log()
+    app_mgr = AppManager.get_instance()
+    app_mgr.load_apps(app_lists)
+    contexts = app_mgr.create_contexts()
+    services = []
+    services.extend(app_mgr.instantiate_apps(**contexts))
+    webapp = wsgi.start_service(app_mgr)
+    if webapp:
+        thr = hub.spawn(webapp)
+        services.append(thr)
+
+    try:
+        sleep(100)
+    except KeyboardInterrupt:
+        print("Exiting...")
+    finally:
+        app_mgr.close()
